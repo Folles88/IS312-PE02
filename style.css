@@ -1,6 +1,6 @@
 :root{
-  --bg: #f7f9fb;
-  --muted: #666;
+  --bg: #e8eef3;
+  --muted: #52677a;
 }
 
 *{box-sizing:border-box}
@@ -18,8 +18,8 @@ body{
 header{
   position:relative;
   height:220px;
-  background:#fff;
-  border-bottom:1px solid #e6e6e6;
+  background:#243b53;
+  border-bottom:1px solid #1a2b3c;
   overflow:hidden;
 }
 
@@ -46,6 +46,7 @@ header h1{
   font-size:1.6rem;
   font-weight:600;
   text-align:center;
+  color:white;
 }
 
 /* Title centered below the name */
@@ -55,7 +56,7 @@ header p{
   transform:translateX(-50%);
   bottom:16px;
   margin:0;
-  color:var(--muted);
+  color:#dce6ef;
   text-align:center;
   font-size:1rem;
 }
@@ -156,44 +157,7 @@ main{
 .acordian > h2{
   margin:0 0 8px 0;
   font-size:1.15rem;
-  color:#333;
-}
-
-/* Footer with contact information */
-footer{
-  width: 100%;
-
-  margin-top: auto;
-  padding:20px;
-  background:#fff;
-  border:1px solid #e6e6e6;
-  border-radius:8px;
-  text-align:center;
-  color:var(--muted);
-  font-size:0.95rem;
-}
-
-footer h3{
-  margin:0 0 12px 0;
-  font-size:1rem;
-  color:#333;
-}
-
-footer a{
-  color:#0366d6;
-  text-decoration:none;
-  margin:0 8px;
-  transition:color .2s;
-}
-
-footer a:hover{
-  color:#0256c7;
-  text-decoration:underline;
-}
-
-footer p{
-  margin:0;
-  line-height:1.6;
+  color:#243b53;
 }
 
 /* Footer pinned to bottom - thin and minimal */
@@ -201,32 +165,89 @@ footer{
   width:100%;
   margin-top:auto;
   padding:12px 20px;
-  background:#fff;
+  background:#243b53;
   border-top:1px solid #e6e6e6;
   text-align:center;
-  color:var(--muted);
+  color:#dce6ef;
   font-size:0.85rem;
 }
 
 footer h3{
   margin:0 0 6px 0;
   font-size:0.95rem;
-  color:#333;
+  color:#ffffff;
 }
 
 footer a{
-  color:#0366d6;
+  color:#dce6ef;
   text-decoration:none;
   margin:0 6px;
   transition:color .2s;
 }
 
 footer a:hover{
-  color:#0256c7;
+  color:#ffffff;
   text-decoration:underline;
 }
 
 footer p{
   margin:0;
   line-height:1.4;
+}
+
+/* Skills Card Layout */
+
+/* Arranges the skills into three columns */
+#skills table {
+    display: block;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 12px;
+}
+
+/* Places each skill card in a three-column grid */
+#skills tbody {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Gives each skill a light gray card */
+#skills tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8eef3;
+    border-radius: 8px;
+    padding: 10px 8px;
+    text-align: center;
+}
+
+/* Styles the skill name */
+#skills td:first-child {
+    display: block;
+    padding: 0;
+    border: none;
+    font-weight: 600;
+    color: #243b53;
+}
+
+/* Places the skill level underneath the name */
+#skills td:last-child {
+    display: block;
+    padding: 4px 0 0;
+    border: none;
+    color: #52677a;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Changes to one column on smaller screens */
+@media (max-width: 520px) {
+    #skills tbody {
+        grid-template-columns: 1fr;
+    }
 }
